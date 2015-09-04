@@ -10,7 +10,7 @@ public  class GameProperties :MonoBehaviour
 	public static float NoteDuration {get{return noteDuration;}}
 	public static float NoteVelocity {get{return SpawnRadius/ NoteDuration;}}
 	//private static float sunRadius = 
-	void Init(){
-		spawnRadius = Camera.main.orthographicSize * 0.8f;
-	}
+	void Awake(){
+        spawnRadius = Camera.main.orthographicSize * 0.8f;
+    }
 }
