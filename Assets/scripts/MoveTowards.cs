@@ -10,7 +10,8 @@ public class MoveTowards : MonoBehaviour {
 		Vector2 direction =  target- transform.position ;
 		direction.Normalize ();
 		GetComponent<Rigidbody2D> ().velocity = direction * GameProperties.NoteVelocity;
-	}
+        GetComponent<Transform>().LookAt(target);
+    }
 	
 	// Update is called once per frame
 	void Update () {

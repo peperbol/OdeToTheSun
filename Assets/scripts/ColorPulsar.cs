@@ -50,7 +50,6 @@ public class ColorPulsar : Pulsar
         float alpha = target.color.a;
         color.a = alpha;
         target.color = color;
-        Debug.Log(target.color);
     }
 
 }

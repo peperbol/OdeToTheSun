@@ -4,6 +4,7 @@ using System.Collections;
 public enum Colors  {
 	DARKBLUE = 0, GREEN = 1, RED = 2, PURPLE = 3, ORANGE = 4, YELLOW = 5, BLACK = 6, CYAN = 7
 }
+
 public static class ColorExtantions{
 
 	public static KeyCode GetKey(this Colors c)
@@ -29,28 +30,28 @@ public static class ColorExtantions{
 			return KeyCode.Q;
 		}
 	}
-    public static Color GetColor(this Colors c)
+    public static Sprite GetSprite(this Colors c)
     {
         switch (c)
         {
             case Colors.DARKBLUE:
-                return Color.blue;
+                return GameObject.FindObjectOfType<ColorSprites>().BlueDark;
             case Colors.GREEN:
-                return Color.green;
+                return GameObject.FindObjectOfType<ColorSprites>().Green;
             case Colors.RED:
-                return Color.red;
+                return GameObject.FindObjectOfType<ColorSprites>().Red;
             case Colors.PURPLE:
-                return new Color(0.5f, 0f, 0.5f);
+                return GameObject.FindObjectOfType<ColorSprites>().Pink;
             case Colors.ORANGE:
-                return new Color(1f,0.5f,0f);
+                return GameObject.FindObjectOfType<ColorSprites>().White;
             case Colors.YELLOW:
-                return Color.yellow;
+                return GameObject.FindObjectOfType<ColorSprites>().Grey;
             case Colors.BLACK:
-                return Color.black;
+                return GameObject.FindObjectOfType<ColorSprites>().Black;
             case Colors.CYAN:
-                return Color.cyan;
+                return GameObject.FindObjectOfType<ColorSprites>().BlueLight;
             default:
-                return Color.white;
+                return null;
         }
     }
 }
