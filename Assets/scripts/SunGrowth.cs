@@ -22,6 +22,6 @@ public class SunGrowth : MonoBehaviour {
 
     void Update()
     {
-        StepsActivated = Mathf.FloorToInt(GameProgress.progress * (steps.Length - 1));
+        StepsActivated = Mathf.FloorToInt(GameProgress.Progress * (steps.Length - 1));
     }
 }
