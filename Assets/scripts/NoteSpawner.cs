@@ -4,25 +4,56 @@ using System.Collections;
 public class NoteSpawner : MonoBehaviour {
 
 
-	private Vector3[] spawnpoints = new Vector3[GameProperties.NUMBER_OF_COLORS];
+	private Vector3[] spawnpoints;
 	public GameObject NotePrefab;
+
 	// Use this for initialization
 	void Start () {
-		for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++) {
-			spawnpoints[i] = new Vector3(
-					Mathf.Cos(2 * Mathf.PI/ GameProperties.NUMBER_OF_COLORS * i) * GameProperties.SpawnRadius,
-				Mathf.Sin(2 * Mathf.PI/ GameProperties.NUMBER_OF_COLORS * i) * GameProperties.SpawnRadius,
-					0
-				);
-        }
-		for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++) {
-			GameObject o = Instantiate<GameObject>(NotePrefab);
-			o.transform.position = spawnpoints[i];
-		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        spawnpoints = calculateSpawnPoints();
 
+        for (int i = 0; i < GameProperties.NUMBER_OF_PLAYERS; i++) {
+            spawnNote(i, Hand.LEFT);
+            spawnNote(i, Hand.RIGHT);
+        }
+    }
+
+    Vector3[] calculateSpawnPoints()
+    {
+        Vector3[] result = new Vector3[GameProperties.NUMBER_OF_COLORS];
+        for (int i = 0; i < GameProperties.NUMBER_OF_PLAYERS; i++)
+        {
+            float angle_to_player = 2 * Mathf.PI / GameProperties.NUMBER_OF_PLAYERS * i;
+            result[toIndex(i, Hand.LEFT)] = new Vector3(
+                    Mathf.Cos(angle_to_player - GameProperties.ANGLE_OFFSET_BETWEEN_HANDS) * GameProperties.SpawnRadius,
+                    Mathf.Sin(angle_to_player - GameProperties.ANGLE_OFFSET_BETWEEN_HANDS) * GameProperties.SpawnRadius,
+                    0
+                );
+            result[toIndex(i, Hand.RIGHT)] = new Vector3(
+                    Mathf.Cos(angle_to_player + GameProperties.ANGLE_OFFSET_BETWEEN_HANDS) * GameProperties.SpawnRadius,
+                    Mathf.Sin(angle_to_player + GameProperties.ANGLE_OFFSET_BETWEEN_HANDS) * GameProperties.SpawnRadius,
+                    0
+                );
+        }
+        return result;
+    }
+
+    void spawnNote(int player, Hand hand) {
+        GameObject o = Instantiate<GameObject>(NotePrefab);
+        o.transform.position = spawnpoints[toIndex(player, hand)];
+    }
+    
+    int toIndex(int player, Hand hand)
+    {
+        return player * 2 + (int)hand;
+    }
+
+    // Update is called once per frame
+    void Update () {
+        
 	}
+
+    public enum Hand
+    {
+        LEFT = 0, RIGHT = 1
+    }
 }
