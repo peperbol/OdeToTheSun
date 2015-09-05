@@ -44,6 +44,7 @@ public class NoteSpawner : MonoBehaviour {
     {
         ProceduralRing r = Instantiate<ProceduralRing>(RingPrefab);
         r.centerDistance = GameProperties.SpawnRadius;
+        r.shrinkingSpeed = GameProperties.NoteVelocity;
     }
 
     public void spawn2RandomNotesWithRing()

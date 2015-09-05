@@ -5,9 +5,10 @@ using System.Collections;
 public class ProceduralRing : MonoBehaviour {
 
     private const int NUMBER_VERTICES = 64;
-    private const float halfWidth = 0.1f;
+    private const float halfWidth = 0.05f;
     private int[] triangleIndices;
     public float centerDistance = 1f;
+    public float shrinkingSpeed = 0.1f;
 
     // Use this for initialization
     void Start () {
@@ -16,11 +17,18 @@ public class ProceduralRing : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Mesh mesh = new Mesh();
-        GetComponent<MeshFilter>().mesh = mesh;
-        mesh.name = "Procedural Grid";
-        mesh.vertices = calculateRingPoints();
-        mesh.triangles = triangleIndices;
+        centerDistance -= shrinkingSpeed * Time.deltaTime;
+        if(centerDistance <= 0.0f)
+        {
+            Destroy(gameObject);
+        } else
+        {
+            Mesh mesh = new Mesh();
+            GetComponent<MeshFilter>().mesh = mesh;
+            mesh.name = "Procedural Ring";
+            mesh.vertices = calculateRingPoints();
+            mesh.triangles = triangleIndices;
+        }
     }
 
     Vector3[] calculateRingPoints()
