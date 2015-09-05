@@ -43,14 +43,15 @@ public class SongPlayer : MonoBehaviour {
 	void Update () {
 		if (!playing) 
 			return;
-        if (!backgroundMusicAudioSource.isPlaying)
-            backgroundMusicAudioSource.Play();
+       
 		this.timeElapsed += Time.deltaTime;
 		timeTillNextBeat -= Time.deltaTime;
         
 
 		if (timeTillNextBeat <= 0) {
-			Debug.Log("Beat");
+            if (currentBeatId == GameProperties.BeatsUntilCenter - 1)
+                backgroundMusicAudioSource.Play();
+            Debug.Log("Beat");
 			timeTillNextBeat = timePerBeat - timeTillNextBeat;
             ClapWave wave = waveSequence.GetWave(currentBeatId);
             string waveStr = wave.ToString();
