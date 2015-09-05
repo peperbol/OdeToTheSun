@@ -2,12 +2,13 @@
 using System.Collections;
 
 [RequireComponent(typeof(Camera))]
-public class BackgroundColorPulsar : MonoBehaviour {
+public class BackgroundColorPulsar : Pulsar
+{
 
     [Range(0, 4)]
     public float maxColorPulse = 1.05f;
 
-    public void startPulse()
+    override public void startPulse()
     {
         Camera target = GetComponent<Camera>();
         StartCoroutine(pulseBackgroundColor(target, 0.1f, maxColorPulse, 0.5f));

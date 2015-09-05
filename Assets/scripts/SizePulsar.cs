@@ -2,11 +2,11 @@
 using System.Collections;
 
 [RequireComponent(typeof(Transform))]
-public class SizePulsar : MonoBehaviour {
+public class SizePulsar : Pulsar {
     [Range(0, 4)]
     public float maxSizePulse = 1.25f;
 
-    public void startPulse()
+    override public void startPulse()
     {
         Transform t = GetComponent<Transform>();
         StartCoroutine(pulseSize(t, 0.02f, maxSizePulse, 0.5f));
