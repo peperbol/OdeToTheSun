@@ -18,7 +18,7 @@ public class GameProgress : MonoBehaviour {
     public static float progress;
  
     public static float Progress {
-        get { return progress }
+        get { return progress; }
         set { progress = Mathf.Clamp(value, 0, 1); }
     }
     private static SunGrowth sg;
