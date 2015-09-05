@@ -1,17 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
-[RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Renderer))]
 public class VisualFade : MonoBehaviour {
     public bool visible;
     public float timeToFade = 1;
-    private SpriteRenderer srenderer;
+    private Renderer srenderer;
 	void Start () {
-        srenderer = GetComponent<SpriteRenderer>();
+        srenderer = GetComponent<Renderer>();
 	}
 
 	void Update () {
-        Color c = srenderer.color;
-        c.a = Mathf.Clamp(c.a + ((visible) ? 1 : -1) * Time.deltaTime * timeToFade, 0, 1);
-        srenderer.color = c;
+        Color c = srenderer.material.color;
+        c.a = Mathf.Clamp(c.a + ((visible) ? 1 : -1) * Time.deltaTime / timeToFade, 0, 1);
+        srenderer.material.color = c;
     }
 }
