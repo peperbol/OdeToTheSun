@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 
 public class InputController : MonoBehaviour {
-    private List<Note> notesInside;
+    private List<Note> notesInside = new List<Note>();
 	private KeyCode[] keys = new KeyCode[GameProperties.NUMBER_OF_COLORS];
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,7 @@ public class InputController : MonoBehaviour {
 	void Update () {
         for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++)
         {
-            if (Input.GetKey(keys[i])) {
+            if (Input.GetKeyDown(keys[i])) {
                 if (notesInside.Exists(e => e.ColorOfNote.GetKey() == keys[i])) {
                     notesInside.FindAll(e => e.ColorOfNote.GetKey() == keys[i]).ForEach(e => e.Activate());
                     Debug.Log(keys[i] + "hit succesfull");

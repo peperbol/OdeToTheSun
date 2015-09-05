@@ -29,4 +29,28 @@ public static class ColorExtantions{
 			return KeyCode.Q;
 		}
 	}
+    public static Color GetColor(this Colors c)
+    {
+        switch (c)
+        {
+            case Colors.DARKBLUE:
+                return Color.blue;
+            case Colors.GREEN:
+                return Color.green;
+            case Colors.RED:
+                return Color.red;
+            case Colors.PURPLE:
+                return new Color(0.5f, 0f, 0.5f);
+            case Colors.ORANGE:
+                return new Color(1f,0.5f,0f);
+            case Colors.YELLOW:
+                return Color.yellow;
+            case Colors.BLACK:
+                return Color.black;
+            case Colors.CYAN:
+                return Color.cyan;
+            default:
+                return Color.white;
+        }
+    }
 }
