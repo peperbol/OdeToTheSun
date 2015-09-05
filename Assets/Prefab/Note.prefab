@@ -129,6 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0bdced6aea51242bc5f22e776d6702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  miss: {fileID: 8300000, guid: 5a1ebf440aaf8ac4fb71b93fc52e4097, type: 3}
+  hit: {fileID: 8300000, guid: f5fb935c347bfb5409ff945dfd01e5f0, type: 3}
+  src: {fileID: 11444002, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -140,6 +143,35 @@ Prefab:
       propertyPath: m_Radius
       value: .0500000007
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: audio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a1ebf440aaf8ac4fb71b93fc52e4097, type: 3}
+    - target: {fileID: 0}
+      propertyPath: miss
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a1ebf440aaf8ac4fb71b93fc52e4097, type: 3}
+    - target: {fileID: 0}
+      propertyPath: hit
+      value: 
+      objectReference: {fileID: 8300000, guid: f5fb935c347bfb5409ff945dfd01e5f0, type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: src
+      value: 
+      objectReference: {fileID: 11444002, guid: df6fbeeaea6b07246821a7738a55d379,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 105196}
