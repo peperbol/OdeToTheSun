@@ -7,8 +7,6 @@ public class NoteArrivation : MonoBehaviour {
     {
         if (col.GetComponent<Note>()) {
             col.GetComponent<Note>().Arrive();
-            Debug.Log(1);
         }
-        Debug.Log(2);
     }
 }
