@@ -10,13 +10,14 @@ public  class GameProperties :MonoBehaviour
     private static float spawnRadius ;
 	public static float SpawnRadius {get{return spawnRadius;}}
 
-	private static float noteDuration = 3f ;
-	public static float NoteDuration {get{return noteDuration;}}
-    public static float NoteVelocity {get{return SpawnRadius/ NoteDuration;}}
-
     private static float beatsPerMinute = 80f;
     public static float BeatsPerMinute { get { return beatsPerMinute; } }
     public static float SecondsPerBeat { get { return 60f / beatsPerMinute; } }
+
+    private static float beatsUntilCenter = 4f;
+    private static float noteDuration = SecondsPerBeat * beatsUntilCenter;
+    public static float NoteDuration { get { return noteDuration; } }
+    public static float NoteVelocity { get { return SpawnRadius / NoteDuration; } }
 
     //private static float sunRadius = 
     void Awake(){
