@@ -14,7 +14,7 @@ public class Note : MonoBehaviour {
     private bool activated;
 	// Use this for initialization
 	void Start () {
-        GetComponent<SpriteRenderer>().sprite = color.GetSprite();
+        GetComponentInChildren<SpriteRenderer>().sprite = color.GetSprite();
         Debug.Log(color.GetSprite());
 	}
 	

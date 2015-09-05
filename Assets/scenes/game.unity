@@ -336,6 +336,7 @@ GameObject:
   - 114: {fileID: 378238725}
   - 114: {fileID: 378238734}
   - 82: {fileID: 378238731}
+  - 114: {fileID: 378238735}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -650,6 +651,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startProgress: .639999986
+--- !u!114 &378238735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 378238723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca30d62c3986f1c429ec48761eb059cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlueDark: {fileID: 21300000, guid: fd38890700e38f843ba876b0764b6761, type: 3}
+  Green: {fileID: 21300000, guid: 5b4aeeef9516c5b4cbd1c2025a2d24e8, type: 3}
+  Red: {fileID: 21300000, guid: a99e35437699e1a40b169a624e66b09d, type: 3}
+  Pink: {fileID: 21300000, guid: 106e701034ac4394f8beff8680572ffa, type: 3}
+  White: {fileID: 21300000, guid: a969bad587c5034488a740c0f14db108, type: 3}
+  Grey: {fileID: 21300000, guid: e527e97a840178244a16d9691e788904, type: 3}
+  Black: {fileID: 21300000, guid: 00445cb43ac8a3c44bd4dcf4d28b4d14, type: 3}
+  BlueLight: {fileID: 21300000, guid: 71da92ee65faf894d8e0d220e599675d, type: 3}
 --- !u!1 &451236858
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,6 +935,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
