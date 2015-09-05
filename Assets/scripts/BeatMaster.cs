@@ -34,6 +34,8 @@ public class BeatMaster : MonoBehaviour {
             spawnNewNote();
         }
         //TODO: juicify things
+
+        GameObject.FindObjectOfType <Juicificationator>().onTheBeat();
     }
 
     private void spawnNewNote()

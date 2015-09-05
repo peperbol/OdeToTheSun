@@ -102,6 +102,7 @@ GameObject:
   - 114: {fileID: 378238729}
   - 114: {fileID: 378238730}
   - 114: {fileID: 378238731}
+  - 114: {fileID: 378238732}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -210,6 +211,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be2a110ad15841646966721b1828b055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &378238732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 378238723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab7312a1f7ce7943b87e024ce312e2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSize: 1.72000003
 --- !u!1 &941710164
 GameObject:
   m_ObjectHideFlags: 0
