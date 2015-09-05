@@ -11,16 +11,17 @@ public  class GameProperties :MonoBehaviour
     private static float spawnRadius ;
 	public static float SpawnRadius {get{return spawnRadius;}}
 
-    private static float beatsPerMinute = 80f;
+    private static float beatsPerMinute = 140f;
     public static float BeatsPerMinute { get { return beatsPerMinute; } }
     public static float SecondsPerBeat { get { return 60f / beatsPerMinute; } }
 
     private static float beatsUntilCenter = 4f;
-    private static float noteDuration = SecondsPerBeat * beatsUntilCenter;
+    private static float noteDuration = SecondsPerBeat * BeatsUntilCenter;
     public static float NoteDuration { get { return noteDuration; } }
     public static float NoteVelocity { get { return SpawnRadius / NoteDuration; } }
-    
-    
+    public static float BeatsUntilCenter { get { return beatsUntilCenter; } }
+
+
 
     void Awake(){
         spawnRadius = Camera.main.orthographicSize * 0.8f;

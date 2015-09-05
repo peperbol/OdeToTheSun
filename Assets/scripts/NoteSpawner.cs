@@ -33,10 +33,10 @@ public class NoteSpawner : MonoBehaviour {
         return result;
     }
 
-    void spawnNote(int player, Hand hand) {
+    void spawnNote(Colors color) {
         Note o = Instantiate<Note>(NotePrefab);
-        o.transform.position = spawnpoints[toIndex(player, hand)];
-        o.ColorOfNote = (Colors)toIndex(player, hand);
+        o.transform.position = spawnpoints[(int)color];
+        o.ColorOfNote = color;
     }
 
 
@@ -45,6 +45,15 @@ public class NoteSpawner : MonoBehaviour {
         ProceduralRing r = Instantiate<ProceduralRing>(RingPrefab);
         r.centerDistance = GameProperties.SpawnRadius;
         r.shrinkingSpeed = GameProperties.NoteVelocity;
+    }
+    public void SpawnWave(ClapWave wave) {
+        for (int i = 0; i < wave.Notes.Length; i++)
+        {
+            if (wave.Notes[i]) {
+                spawnNote((Colors)i);
+            }
+        }
+        spawnRing();
     }
 
     public void spawn2RandomNotesWithRing()
@@ -60,10 +69,10 @@ public class NoteSpawner : MonoBehaviour {
             secondNotePlayer = Random.Range(0, GameProperties.NUMBER_OF_PLAYERS);
             secondNoteHand = Random.value < .5 ? Hand.LEFT : Hand.RIGHT;
         }
-
+        /*
         spawnNote(firstNotePlayer, firstNoteHand);
         spawnNote(secondNotePlayer, secondNoteHand);
-
+        */
         spawnRing();
     }
     
