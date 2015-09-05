@@ -28,7 +28,7 @@ public class BeatSequence {
             {
                 line = theReader.ReadLine();
 
-                if (line != null || line == BARIER)
+                if (!(line == null || line == BARIER))
                 {
 
                     bools.Add(new bool[] { line[0] != NONE, line[1] != NONE, line[2] != NONE, line[3] != NONE, line[4] != NONE, line[5] != NONE, line[6] != NONE, line[7] != NONE, (line.Length > 8) ? line[8] == HOLD : false, (line.Length > 8) ? line[8] == RELEASE : false });
@@ -53,6 +53,9 @@ public class BeatSequence {
         }
     }
     public void Write(string path) {
+        if (File.Exists(Application.dataPath + path)) {
+            File.Delete(Application.dataPath + path);
+        }
         StreamWriter sr = File.CreateText(Application.dataPath + path);
         for (int x = 0; x < data.GetLength(0); x++)
         {
