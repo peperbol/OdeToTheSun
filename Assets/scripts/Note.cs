@@ -3,8 +3,12 @@ using System.Collections;
 
 public class Note : MonoBehaviour {
 
-	private KeyCode key;
-	private bool activated;
+	private Colors color;
+
+    public Colors ColorOfNote {
+        get { return color; }
+    }
+    private bool activated;
 	// Use this for initialization
 	void Start () {
 	
