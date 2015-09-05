@@ -380,7 +380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab7312a1f7ce7943b87e024ce312e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSizePulse: 1.25
   maxColorPulse: 1.10000002
 --- !u!1 &451236858
 GameObject:
@@ -586,6 +585,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
