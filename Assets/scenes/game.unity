@@ -222,7 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab7312a1f7ce7943b87e024ce312e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSize: 1.72000003
+  maxSizePulse: 1.25
+  maxColorPulse: 1.10000002
 --- !u!1 &941710164
 GameObject:
   m_ObjectHideFlags: 0

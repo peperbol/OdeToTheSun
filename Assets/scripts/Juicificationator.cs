@@ -4,11 +4,26 @@ using System;
 
 public class Juicificationator : MonoBehaviour {
     [Range(0,4)]
-    public float maxSize = 2f;
-	public void onTheBeat()
+    public float maxSizePulse = 1.25f;
+
+    [Range(0, 4)]
+    public float maxColorPulse = 1.05f;
+
+    public void onTheBeat()
+    {
+        beatTheNotes();
+        beatTheBackground();
+    }
+
+    private void beatTheBackground()
+    {
+        StartCoroutine(pulseBackgroundColor(Camera.main, 0.1f, maxColorPulse, 0.5f));
+    }
+
+    private void beatTheNotes()
     {
         Note[] visibleNotes = GameObject.FindObjectsOfType<Note>();
-        foreach(Note note in visibleNotes)
+        foreach (Note note in visibleNotes)
         {
             onTheBeat(note);
         }
@@ -16,10 +31,10 @@ public class Juicificationator : MonoBehaviour {
 
     private void onTheBeat(Note note)
     {
-        StartCoroutine(pulse(note.transform, 0.1f, maxSize, 0.5f));
+        StartCoroutine(pulseSize(note.transform, 0.02f, maxSizePulse, 0.5f));
     }
 
-    private IEnumerator pulse(Transform target, float widenTime, float maxSize, float shrinkTime)
+    private IEnumerator pulseSize(Transform target, float widenTime, float maxSize, float shrinkTime)
     {
         float currTime = 0;
         Vector3 initialScale = target.localScale;
@@ -50,5 +65,35 @@ public class Juicificationator : MonoBehaviour {
         yield return null;
     }
 
+    private IEnumerator pulseBackgroundColor(Camera target, float widenTime, float maxBrightness, float shrinkTime)
+    {
+        float currTime = 0;
+        Color initial = target.backgroundColor;
+
+        while (currTime < widenTime && target != null)
+        {
+            float scale = Mathf.Lerp(1, maxBrightness, currTime / widenTime);
+            target.backgroundColor = initial * scale;
+
+            currTime += Time.deltaTime;
+            yield return null;
+        }
+
+        while (currTime < shrinkTime && target != null)
+        {
+            float scale = Mathf.Lerp(maxBrightness, 1, (currTime - widenTime) / shrinkTime);
+            target.backgroundColor = initial * scale;
+
+            currTime += Time.deltaTime;
+            yield return null;
+        }
+
+        if (target != null)
+        {
+            target.backgroundColor = initial;
+        }
+
+        yield return null;
+    }
 
 }
