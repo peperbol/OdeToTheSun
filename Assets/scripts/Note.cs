@@ -15,7 +15,6 @@ public class Note : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         GetComponentInChildren<SpriteRenderer>().sprite = color.GetSprite();
-        Debug.Log(color.GetSprite());
 	}
 	
 	// Update is called once per frame
