@@ -1032,6 +1032,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1540497711}
   - 114: {fileID: 1540497712}
+  - 114: {fileID: 1540497713}
   m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
@@ -1090,6 +1091,18 @@ MonoBehaviour:
   - {fileID: 1206716109}
   - {fileID: 1469961391}
   progress: 0
+--- !u!114 &1540497713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1540497710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e3500c452828c46bd497124abb1404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSizePulse: 1.25
 --- !u!1 &1828515155
 GameObject:
   m_ObjectHideFlags: 0
