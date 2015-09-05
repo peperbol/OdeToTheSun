@@ -4,7 +4,9 @@ using System.Collections;
 public class Note : MonoBehaviour {
 
 	private Colors color;
-
+    public AudioClip miss;
+    public AudioClip hit;
+    public AudioPlay src;
     public Colors ColorOfNote {
         get { return color; }
         set {  color = value; }
@@ -26,17 +28,26 @@ public class Note : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
         //Arrive();
 	}
-    public void Arrive() {
+    public void Validate()
+    {
+        Debug.Log("val");
         if (activated)
         {
             Debug.Log("Activated arrive");
             GameProgress.HitBeat();
+            AudioPlay.PlaySound(hit, src);
         }
-        else {
+        else
+        {
             Debug.Log("unactivated arrive");
             GameProgress.MissBeat();
+            AudioPlay.PlaySound(miss, src);
         }
         Destroy(gameObject);
+    }
+    public void Arrive() {
+        Debug.Log("arr");
+        Destroy( GetComponent<Renderer>());
     }
     
 

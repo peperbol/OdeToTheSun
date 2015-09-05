@@ -8,10 +8,10 @@ using System;
 public class BeatSequence {
     public const int MEASURELENGHT = 4;
     public const string BARIER = "########";
-    private const char NONE = '-';
-    private const char HOLD = 'h';
-    private const char RELEASE = 'r';
-    public const string Path = "/Sequence/seq.txt";
+    public const char NONE = '-';
+    public const char HOLD = 'h';
+    public const char RELEASE = 'r';
+    public const string Path = "/sequence.txt";
 
     public bool[,] data;
     public BeatSequence(string path) {
@@ -23,7 +23,7 @@ public class BeatSequence {
         string line;
         try
         {
-            StreamReader theReader = new StreamReader(Application.dataPath + path, Encoding.Default);
+            StreamReader theReader = new StreamReader(Application.streamingAssetsPath + path, Encoding.Default);
             do
             {
                 line = theReader.ReadLine();
@@ -53,10 +53,10 @@ public class BeatSequence {
         }
     }
     public void Write(string path) {
-        if (File.Exists(Application.dataPath + path)) {
-            File.Delete(Application.dataPath + path);
+        if (File.Exists(Application.streamingAssetsPath + path)) {
+            File.Delete(Application.streamingAssetsPath + path);
         }
-        StreamWriter sr = File.CreateText(Application.dataPath + path);
+        StreamWriter sr = File.CreateText(Application.streamingAssetsPath + path);
         for (int x = 0; x < data.GetLength(0); x++)
         {
             if (x % MEASURELENGHT == 0) {
