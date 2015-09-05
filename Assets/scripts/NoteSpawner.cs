@@ -6,6 +6,7 @@ public class NoteSpawner : MonoBehaviour {
 
 	private Vector3[] spawnpoints;
 	public Note NotePrefab;
+    public ProceduralRing RingPrefab;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +39,14 @@ public class NoteSpawner : MonoBehaviour {
         o.ColorOfNote = (Colors)toIndex(player, hand);
     }
 
-    public void spawn2RandomNotes()
+
+    void spawnRing()
+    {
+        ProceduralRing r = Instantiate<ProceduralRing>(RingPrefab);
+        r.centerDistance = GameProperties.SpawnRadius;
+    }
+
+    public void spawn2RandomNotesWithRing()
     {
         int firstNotePlayer = Random.Range(0,GameProperties.NUMBER_OF_PLAYERS);
         Hand firstNoteHand = Random.value < .5 ? Hand.LEFT : Hand.RIGHT;
@@ -54,6 +62,8 @@ public class NoteSpawner : MonoBehaviour {
 
         spawnNote(firstNotePlayer, firstNoteHand);
         spawnNote(secondNotePlayer, secondNoteHand);
+
+        spawnRing();
     }
     
     public static int toIndex(int player, Hand hand)
