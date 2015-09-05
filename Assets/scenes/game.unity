@@ -336,6 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NotePrefab: {fileID: 11481306, guid: c1de58489f0342a4da6198dc1bd67d79, type: 2}
+  RingPrefab: {fileID: 11478520, guid: 9441f1ff9bbbe5b4895a6e4ad055bfb9, type: 2}
 --- !u!114 &378238729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,7 +1091,6 @@ MonoBehaviour:
   - {fileID: 1828515157}
   - {fileID: 1206716109}
   - {fileID: 1469961391}
-  progress: 0
 --- !u!114 &1540497713
 MonoBehaviour:
   m_ObjectHideFlags: 0

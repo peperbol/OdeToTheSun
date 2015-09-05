@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: 219e2bfb15b843d4c9dce17cc5fc22fe
-timeCreated: 1441463867
+guid: 682d3abd12f2a454aa13a9b2b4a5b915
+timeCreated: 1441457609
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences:
-  - NotePrefab: {instanceID: 0}
-  - RingPrefab: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -41,7 +41,7 @@ public class BeatMaster : MonoBehaviour {
     private void spawnNewNote()
     {
         Debug.Log("Note!");
-        GameObject.FindObjectOfType<NoteSpawner>().spawn2RandomNotes();
+        GameObject.FindObjectOfType<NoteSpawner>().spawn2RandomNotesWithRing();
     }
 
     private bool shouldSpawnNewNote()
