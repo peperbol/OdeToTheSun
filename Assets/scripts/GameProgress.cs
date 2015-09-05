@@ -16,6 +16,11 @@ public class GameProgress : MonoBehaviour {
     [Range(0, 1)]
     public float startProgress; // debug field
     public static float progress;
+ 
+    public static float Progress {
+        get { return progress; }
+        set { progress = Mathf.Clamp(value, 0, 1); }
+    }
     private static SunGrowth sg;
 
     private static BeatSequence sequence;
@@ -31,14 +36,14 @@ public class GameProgress : MonoBehaviour {
 
     void Start () {
         sg = GameObject.FindObjectOfType<SunGrowth>();
-        progress = startProgress;
+        Progress = startProgress;
 	}
     public static void HitBeat()
     {
-        progress += beatHitProgress;
+        Progress += beatHitProgress;
     }
     public static void MissBeat()
     {
-        progress += beatMissProgress;
+        Progress += beatMissProgress;
     }
 }
