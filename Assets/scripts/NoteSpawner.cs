@@ -10,11 +10,6 @@ public class NoteSpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         spawnpoints = calculateSpawnPoints();
-
-        for (int i = 0; i < 1; i++) {
-            spawnNote(i, Hand.LEFT);
-            spawnNote(i, Hand.RIGHT);
-        }
     }
 
     Vector3[] calculateSpawnPoints()
@@ -41,6 +36,24 @@ public class NoteSpawner : MonoBehaviour {
         Note o = Instantiate<Note>(NotePrefab);
         o.transform.position = spawnpoints[toIndex(player, hand)];
         o.ColorOfNote = (Colors)toIndex(player, hand);
+    }
+
+    public void spawn2RandomNotes()
+    {
+        int firstNotePlayer = Random.Range(0,GameProperties.NUMBER_OF_PLAYERS);
+        Hand firstNoteHand = Random.value < .5 ? Hand.LEFT : Hand.RIGHT;
+
+        int secondNotePlayer = Random.Range(0, GameProperties.NUMBER_OF_PLAYERS);
+        Hand secondNoteHand = Random.value < .5 ? Hand.LEFT : Hand.RIGHT;
+
+        while(firstNotePlayer == secondNotePlayer && firstNoteHand == secondNoteHand)
+        {
+            secondNotePlayer = Random.Range(0, GameProperties.NUMBER_OF_PLAYERS);
+            secondNoteHand = Random.value < .5 ? Hand.LEFT : Hand.RIGHT;
+        }
+
+        spawnNote(firstNotePlayer, firstNoteHand);
+        spawnNote(secondNotePlayer, secondNoteHand);
     }
     
     public static int toIndex(int player, Hand hand)
