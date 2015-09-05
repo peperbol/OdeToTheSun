@@ -29,9 +29,11 @@ public class Note : MonoBehaviour {
         if (activated)
         {
             Debug.Log("Activated arrive");
+            GameProgress.HitBeat();
         }
         else {
             Debug.Log("unactivated arrive");
+            GameProgress.MissBeat();
         }
         Destroy(gameObject);
     }

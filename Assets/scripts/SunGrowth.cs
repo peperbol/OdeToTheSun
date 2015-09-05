@@ -3,9 +3,7 @@ using System.Collections;
 
 public class SunGrowth : MonoBehaviour {
     public VisualFade[] steps = new VisualFade [13];
-
-    [Range(0,1)]
-    public float progress;
+    
     private int stepsactivated;
     private int StepsActivated {
         get {
@@ -20,11 +18,10 @@ public class SunGrowth : MonoBehaviour {
         }
     }
 	void Start () {
-
     }
 
     void Update()
     {
-        StepsActivated = Mathf.FloorToInt(progress * (steps.Length - 1));
+        StepsActivated = Mathf.FloorToInt(GameProgress.progress * (steps.Length - 1));
     }
 }
