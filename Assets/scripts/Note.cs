@@ -23,10 +23,9 @@ public class Note : MonoBehaviour {
 		activated = true;
 	}
 	void OnCollisionEnter2D(Collision2D col){
-        Arrive();
-        Destroy(gameObject);
+        //Arrive();
 	}
-    private void Arrive() {
+    public void Arrive() {
         if (activated)
         {
             Debug.Log("Activated arrive");
@@ -34,6 +33,8 @@ public class Note : MonoBehaviour {
         else {
             Debug.Log("unactivated arrive");
         }
+        Destroy(gameObject);
     }
+    
 
 }

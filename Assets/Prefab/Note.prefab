@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11458426}
   - 58: {fileID: 5806364}
   - 114: {fileID: 11481306}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Note
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105196}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.88999999, y: -.810000002, z: 0}
+  m_LocalPosition: {x: -.0649999976, y: .0670000017, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,7 +92,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .100000001
+  m_Radius: .0500000007
 --- !u!114 &11458426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,7 +122,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Radius
+      value: .0500000007
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 105196}
