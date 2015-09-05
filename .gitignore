@@ -14,7 +14,7 @@ ProjectSettings/ProjectVersion.txt
 /*.pidb
 /*.booproj
 .vs/
-
+Assets/UnityVS/
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
 
