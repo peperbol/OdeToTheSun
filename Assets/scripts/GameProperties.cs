@@ -14,7 +14,7 @@ public  class GameProperties :MonoBehaviour
 	public static float NoteDuration {get{return noteDuration;}}
     public static float NoteVelocity {get{return SpawnRadius/ NoteDuration;}}
 
-    private static float beatsPerMinute = 40f;
+    private static float beatsPerMinute = 80f;
     public static float BeatsPerMinute { get { return beatsPerMinute; } }
     public static float SecondsPerBeat { get { return 60f / beatsPerMinute; } }
 
