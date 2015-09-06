@@ -13,6 +13,7 @@ public class EndOfGame : MonoBehaviour
     public float zoomTime;
     public SpriteRenderer scenery;
     public SpriteRenderer credit;
+    public SpriteRenderer title;
     public Sprite day;
     public Sprite night;
     private bool restartable = false;
@@ -60,6 +61,7 @@ public class EndOfGame : MonoBehaviour
             Color c = credit.color;
             c.a = Mathf.Lerp(0, 1, time / creditFade);
             credit.color = c;
+            title.color = c;
             yield return null;
         }
         restartable = true;
