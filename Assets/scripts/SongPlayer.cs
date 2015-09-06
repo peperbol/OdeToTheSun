@@ -63,7 +63,12 @@ public class SongPlayer : MonoBehaviour {
 			currentBeatId++;
             //TODO vincent INVESTIGATE
             juice.onTheBeat();
-		}
+
+            if (currentBeatId >= waveSequence.Count())
+            {
+                GameObject.FindObjectOfType<EndOfGame>().End();
+            }
+        }
 
 		// not now, maybe later for juuuuice 
 		if (timeTillNextMeasure <= 0) {

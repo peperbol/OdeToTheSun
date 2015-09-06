@@ -1,28 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Camera))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class BackgroundColorPulsar : Pulsar
 {
 
     [Range(0, 4)]
-    public float maxColorPulse = 1.05f;
+    public float maxColorPulse = 0.05f;
 
     override public void startPulse()
     {
-        Camera target = GetComponent<Camera>();
+        SpriteRenderer target = GetComponent<SpriteRenderer>();
         StartCoroutine(pulseBackgroundColor(target, 0.1f, maxColorPulse, GameProperties.SecondsPerBeat - 0.05f));
     }
 
-    private IEnumerator pulseBackgroundColor(Camera target, float widenTime, float maxBrightness, float shrinkTime)
+    private IEnumerator pulseBackgroundColor(SpriteRenderer target, float widenTime, float maxBrightness, float shrinkTime)
     {
         float currTime = 0;
-        Color initial = target.backgroundColor;
+        Color initial = target.color;
 
         while (currTime < widenTime && target != null)
         {
-            float scale = Mathf.Lerp(1, maxBrightness, currTime / widenTime);
-            target.backgroundColor = initial * scale;
+            float scale = Mathf.Lerp(0, maxBrightness, currTime / widenTime);
+            initial.a = scale;
+            target.color = initial;
 
             currTime += Time.deltaTime;
             yield return null;
@@ -30,8 +31,9 @@ public class BackgroundColorPulsar : Pulsar
 
         while (currTime < shrinkTime && target != null)
         {
-            float scale = Mathf.Lerp(maxBrightness, 1, (currTime - widenTime) / shrinkTime);
-            target.backgroundColor = initial * scale;
+            float scale = Mathf.Lerp(maxBrightness, 0, (currTime - widenTime) / shrinkTime);
+            initial.a = scale;
+            target.color = initial;
 
             currTime += Time.deltaTime;
             yield return null;
@@ -39,7 +41,9 @@ public class BackgroundColorPulsar : Pulsar
 
         if (target != null)
         {
-            target.backgroundColor = initial;
+
+            initial.a = 0;
+            target.color = initial;
         }
 
     }
