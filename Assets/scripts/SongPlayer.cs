@@ -20,11 +20,13 @@ public class SongPlayer : MonoBehaviour {
 	public AudioSource backgroundMusicAudioSource;
 	public AudioSource effectsAudioSource;
     private NoteSpawner ns;
+    private Juicificationator juice;
 	// Use this for initialization
 	void Start () {
         ns = GameObject.FindObjectOfType<NoteSpawner>();
+        juice = GameObject.FindObjectOfType<Juicificationator>();
 
-		timeElapsed = 0;
+        timeElapsed = 0;
 		timePerBeat = 60 / GameProperties.BeatsPerMinute;
 		timeTillNextBeat = timePerBeat;
 		timeTillNextMeasure = timePerBeat * 4;		// 4/4 time signature, 4 beats per measure	timePerBeat = 60 / bpm;
@@ -58,6 +60,7 @@ public class SongPlayer : MonoBehaviour {
             //effectsAudioSource.PlayOneShot(beatSound);
             ns.SpawnWave(wave);
 			currentBeatId++;
+            juice.onTheBeat();
 		}
 
 		// not now, maybe later for juuuuice 
