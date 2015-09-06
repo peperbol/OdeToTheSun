@@ -3,10 +3,13 @@ using System.Collections;
 
 public class Note : MonoBehaviour {
 
+	public float fadeoutSpeed = 0.1f;
+	private bool arriving = false;
 	private Colors color;
     public AudioClip miss;
     public AudioClip hit;
     public AudioPlay src;
+	private SpriteRenderer spriteRenderer;
     public Colors ColorOfNote {
         get { return color; }
         set {  color = value; }
@@ -14,19 +17,23 @@ public class Note : MonoBehaviour {
     private bool activated;
 	// Use this for initialization
 	void Start () {
-        GetComponentInChildren<SpriteRenderer>().sprite = color.GetSprite();
+		spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer.sprite = color.GetSprite();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (arriving) {
+			Color color = spriteRenderer.color;
+			color.a -= fadeoutSpeed;
+			spriteRenderer.color = color;
+        	Destroy(GetComponent<Renderer>());
+		}
 	}
 	public void Activate(){
 		activated = true;
 	}
-	void OnCollisionEnter2D(Collision2D col){
-        //Arrive();
-	}
+
     public void Validate()
     {
         Debug.Log("val");
@@ -40,13 +47,14 @@ public class Note : MonoBehaviour {
         {
             Debug.Log("unactivated arrive");
             GameProgress.MissBeat();
+			Camera.main.GetComponent<RandomShake>().PlayShake();
             AudioPlay.PlaySound(miss, src);
         }
         Destroy(gameObject);
     }
     public void Arrive() {
-        Debug.Log("arr");
-        Destroy( GetComponent<Renderer>());
+        Debug.Log("arrived");
+		arriving = true;
     }
     
 
