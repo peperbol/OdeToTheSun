@@ -5,6 +5,7 @@ using System;
 public class StartGame : MonoBehaviour {
     Colors[] c;
     public bool debugSkip;
+    public GameObject StartVisual;
     // Use this for initialization
     void Start () {
 
@@ -22,6 +23,7 @@ public class StartGame : MonoBehaviour {
         
         if (start || debugSkip) {
             GameObject.FindObjectOfType<SongPlayer>().Play();
+            Destroy(StartVisual);
             Destroy(this);
         }
 	}
