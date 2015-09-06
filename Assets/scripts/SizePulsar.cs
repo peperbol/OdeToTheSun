@@ -9,7 +9,7 @@ public class SizePulsar : Pulsar {
     override public void startPulse()
     {
         Transform t = GetComponent<Transform>();
-        StartCoroutine(pulseSize(t, 0.02f, maxSizePulse, 0.5f));
+        StartCoroutine(pulseSize(t, 0.02f, maxSizePulse, GameProperties.SecondsPerBeat - 0.05f));
     }
 
     private IEnumerator pulseSize(Transform target, float widenTime, float maxSize, float shrinkTime)

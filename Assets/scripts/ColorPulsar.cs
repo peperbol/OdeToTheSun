@@ -11,7 +11,7 @@ public class ColorPulsar : Pulsar
     override public void startPulse()
     {
         Material target = GetComponent<MeshRenderer>().material;
-        StartCoroutine(pulseColor(target, 0.1f, maxColorPulse, 0.5f));
+        StartCoroutine(pulseColor(target, 0.1f, maxColorPulse, GameProperties.SecondsPerBeat - 0.05f));
     }
 
     private IEnumerator pulseColor(Material target, float widenTime, float maxBrightness, float shrinkTime)

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visible: 1
-  timeToFade: 1
+  timeToFade: .00100000005
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -118,7 +118,7 @@ Prefab:
       objectReference: {fileID: 2100000, guid: c5198afad556630458bc552c889c2757, type: 2}
     - target: {fileID: 0}
       propertyPath: timeToFade
-      value: 1
+      value: .00100000005
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled

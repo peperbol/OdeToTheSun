@@ -60,6 +60,7 @@ public class SongPlayer : MonoBehaviour {
             //effectsAudioSource.PlayOneShot(beatSound);
             ns.SpawnWave(wave);
 			currentBeatId++;
+            //TODO vincent INVESTIGATE
             juice.onTheBeat();
 		}
 
