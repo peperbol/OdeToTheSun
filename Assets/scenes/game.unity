@@ -140,48 +140,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: .0500000007
---- !u!1001 &104144015
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 404380, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -1.76516616
-      objectReference: {fileID: 0}
-    - target: {fileID: 404380, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .131478235
-      objectReference: {fileID: 0}
-    - target: {fileID: 404380, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -.0571289062
-      objectReference: {fileID: 0}
-    - target: {fileID: 404380, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 404380, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 404380, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 404380, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 404380, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &185142392
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,7 +293,7 @@ GameObject:
   - 82: {fileID: 378238726}
   - 114: {fileID: 378238725}
   - 114: {fileID: 378238734}
-  - 82: {fileID: 378238731}
+  - 114: {fileID: 378238731}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -367,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede22c683e17e634d83cd10c8bde9117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playing: 1
+  playing: 0
   beatSound: {fileID: 8300000, guid: 92fb489753ebc3340a0736dfb07cfa6f, type: 3}
   backgroundMusicAudioSource: {fileID: 378238733}
   effectsAudioSource: {fileID: 378238726}
@@ -489,75 +447,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8677fec61ec10044978b9944f6af888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &378238731
-AudioSource:
+--- !u!114 &378238731
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378238723}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ede22c683e17e634d83cd10c8bde9117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playing: 0
+  beatSound: {fileID: 0}
+  backgroundMusicAudioSource: {fileID: 0}
+  effectsAudioSource: {fileID: 0}
 --- !u!114 &378238732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +479,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378238723}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b939dca28aaf2714189951900761a0c7, type: 3}

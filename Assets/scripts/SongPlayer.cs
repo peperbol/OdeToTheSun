@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
+using System.Text;
 
 public class SongPlayer : MonoBehaviour {
 
@@ -70,8 +71,7 @@ public class SongPlayer : MonoBehaviour {
 	public void LoadSequenceFile(string fileName) {
 		string filePath = System.IO.Path.Combine(Application.streamingAssetsPath, fileName);
         Debug.Log ("filePath " + filePath);
-		FileInfo file = new FileInfo (filePath);
-        StreamReader reader = file.OpenText();
+        StreamReader reader = new StreamReader(filePath, Encoding.Default);
         string line = reader.ReadLine();
 	
 
@@ -91,8 +91,8 @@ public class SongPlayer : MonoBehaviour {
 			ClapWave wave = new ClapWave(claps, hold, release);
 			waveSequence.Add(wave);
 
-            Debug.Log(line);
-			Debug.Log(wave.ToString());
+            /*Debug.Log(line);
+			Debug.Log(wave.ToString());*/
             line = reader.ReadLine();
         } while (line != null);        
 

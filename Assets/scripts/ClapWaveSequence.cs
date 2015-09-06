@@ -61,7 +61,7 @@ public class ClapWave {
 		return timeStamp;
 	}
 
-	public string ToString() {
+	public override string ToString() {
 		string str = "";
 
 		for (int i = 0; i < notes.Length; i++) {

@@ -41,6 +41,5 @@ public class BackgroundColorPulsar : MonoBehaviour {
             target.backgroundColor = initial;
         }
 
-        yield return null;
     }
 }
