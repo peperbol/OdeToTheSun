@@ -528,6 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb36625ef1e3b634bba6b3d83eb593aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugSkip: 0
 --- !u!114 &378238732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,12 +615,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 378238723}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87194bc26abf13a4ebf32e446151e225, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startProgress: 1
+  startProgress: 0
 --- !u!114 &378238735
 MonoBehaviour:
   m_ObjectHideFlags: 0
