@@ -2,8 +2,25 @@
 using System.Collections;
 
 public class GameProgress : MonoBehaviour {
+    private static float beats = 0;
     public static float totalbeats {
-        get { return GameObject.FindObjectOfType<SongPlayer>().AmmountOfWaves; }// to be edited
+        get {
+            if (beats == 0) {
+                int c = 0;
+                ClapWaveSequence seq = FindObjectOfType<SongPlayer>().WaveSequence;
+
+                for (int i = 0; i < seq.Count(); i++)
+                {
+                    for (int j = 0; j < seq.GetWave(i).Notes.Length; j++)
+                    {
+                        if (seq.GetWave(i).Notes[j]) c++;
+                    }
+                }
+                beats = c;
+            }
+            return beats;
+
+        }// to be edited
     }
     public static float beatHitProgress {
         get { return 1/(totalbeats * GameProperties.BEAT_SUCCEED_RATIO); }
