@@ -7,7 +7,7 @@ public class AudioPlay : MonoBehaviour {
         AudioPlay o = Instantiate(prefab);
         o.GetComponent<AudioSource>().PlayOneShot(clip);
     }
-    void update() {
+    void Update() {
         ttl -= Time.deltaTime;
         if (ttl <=0) Destroy(gameObject);
     }
