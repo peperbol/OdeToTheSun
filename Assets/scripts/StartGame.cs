@@ -4,6 +4,7 @@ using System;
 
 public class StartGame : MonoBehaviour {
     Colors[] c;
+    public bool debugSkip;
     // Use this for initialization
     void Start () {
 
@@ -13,11 +14,13 @@ public class StartGame : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         bool start = true;
+		
         for (int i = 0; i < c.Length; i++)
         {
             start &= Input.GetKey(c[i].GetKey());
         }
-        if (start) {
+        
+        if (start || debugSkip) {
             GameObject.FindObjectOfType<SongPlayer>().Play();
             Destroy(this);
         }

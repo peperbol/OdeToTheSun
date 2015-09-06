@@ -55,7 +55,8 @@ public class SongPlayer : MonoBehaviour {
             if (currentBeatId == GameProperties.BeatsUntilCenter - 1)
                 backgroundMusicAudioSource.Play();
             //Debug.Log("Beat");
-			timeTillNextBeat = timePerBeat - timeTillNextBeat;
+			//Debug.Log(timeTillNetBeat);
+			timeTillNextBeat = timePerBeat + timeTillNextBeat;
             ClapWave wave = waveSequence.GetWave(currentBeatId);
             string waveStr = wave.ToString();
             //effectsAudioSource.PlayOneShot(beatSound);
