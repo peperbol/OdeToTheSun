@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameProgress : MonoBehaviour {
     public static float totalbeats {
-        get { return 35; }// to be edited
+        get { return GameObject.FindObjectOfType<SongPlayer>().AmmountOfWaves; }// to be edited
     }
     public static float beatHitProgress {
         get { return 1/(totalbeats * GameProperties.BEAT_SUCCEED_RATIO); }
