@@ -19,7 +19,13 @@ public class GameProgress : MonoBehaviour {
  
     public static float Progress {
         get { return progress; }
-        set { progress = Mathf.Clamp(value, 0, 1); }
+        set {
+            progress = Mathf.Clamp(value, 0, 1);
+            if(progress == 1)
+            {
+                GameObject.FindObjectOfType<EndOfGame>().End();
+            }
+        }
     }
     private static SunGrowth sg;
 

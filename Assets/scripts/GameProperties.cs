@@ -11,7 +11,7 @@ public  class GameProperties :MonoBehaviour
     private static float spawnRadius ;
 	public static float SpawnRadius {get{return spawnRadius;}}
 
-    private static float beatsPerMinute = 141f;
+    private static float beatsPerMinute = 140f;
     public static float BeatsPerMinute { get { return beatsPerMinute; } }
     public static float SecondsPerBeat { get { return 60f / beatsPerMinute; } }
 
