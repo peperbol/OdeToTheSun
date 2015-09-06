@@ -65,6 +65,7 @@ public class BeatSequenceEditor : EditorWindow
             if (x % BeatSequence.MEASURELENGHT == 0)
             {
                 EditorGUI.DrawRect(new Rect(0, height- 5, position.width, 1), new Color(0.3f, 0.35f, 0.4f));
+                EditorGUI.LabelField(new Rect(5, height, 20, 20), ""+ (x / BeatSequence.MEASURELENGHT + 1));
             }
             width = Left;
             for (int y = 0; y < b.data.GetLength(1); y++)

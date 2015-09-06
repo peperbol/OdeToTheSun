@@ -23,6 +23,10 @@ public class SongPlayer : MonoBehaviour {
     private NoteSpawner ns;
     private Juicificationator juice;
 	// Use this for initialization
+
+    public int AmmountOfWaves {
+        get { return waveSequence.Count(); }
+    }
 	void Start () {
         ns = GameObject.FindObjectOfType<NoteSpawner>();
         juice = GameObject.FindObjectOfType<Juicificationator>();
@@ -52,7 +56,7 @@ public class SongPlayer : MonoBehaviour {
         
 
 		if (timeTillNextBeat <= 0) {
-            if (currentBeatId == GameProperties.BeatsUntilCenter - 1)
+            if (currentBeatId == GameProperties.BeatsUntilCenter )
                 backgroundMusicAudioSource.Play();
             //Debug.Log("Beat");
 			//Debug.Log(timeTillNetBeat);
@@ -65,7 +69,7 @@ public class SongPlayer : MonoBehaviour {
             //TODO vincent INVESTIGATE
             juice.onTheBeat();
 
-            if (currentBeatId >= waveSequence.Count())
+            if (currentBeatId >= AmmountOfWaves)
             {
                 GameObject.FindObjectOfType<EndOfGame>().End();
             }
