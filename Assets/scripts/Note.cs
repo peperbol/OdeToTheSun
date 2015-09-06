@@ -14,7 +14,7 @@ public class Note : MonoBehaviour {
     private bool activated;
 	// Use this for initialization
 	void Start () {
-        GetComponent<Renderer>().material.color = color.GetColor();
+        GetComponentInChildren<SpriteRenderer>().sprite = color.GetSprite();
 	}
 	
 	// Update is called once per frame

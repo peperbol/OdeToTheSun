@@ -5,7 +5,7 @@ using System.Collections;
 public class ProceduralRing : MonoBehaviour {
 
     private const int NUMBER_VERTICES = 64;
-    private const float halfWidth = 0.05f;
+    private const float halfWidth = 0.02f;
     private int[] triangleIndices;
     public float centerDistance = 1f;
     public float shrinkingSpeed = 0.1f;

@@ -21,8 +21,8 @@ public class Juicificationator : MonoBehaviour {
 
     private void beatThePulsars()
     {
-        SizePulsar[] pulsars = GameObject.FindObjectsOfType<SizePulsar>();
-        foreach (SizePulsar pulsee in pulsars)
+        Pulsar[] pulsars = GameObject.FindObjectsOfType<Pulsar>();
+        foreach (Pulsar pulsee in pulsars)
         {
             pulsee.startPulse();
         }
