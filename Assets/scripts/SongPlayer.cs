@@ -52,7 +52,7 @@ public class SongPlayer : MonoBehaviour {
         
 
 		if (timeTillNextBeat <= 0) {
-            if (currentBeatId == GameProperties.BeatsUntilCenter - 1)
+            if (currentBeatId == GameProperties.BeatsUntilCenter )
                 backgroundMusicAudioSource.Play();
             //Debug.Log("Beat");
 			//Debug.Log(timeTillNetBeat);
