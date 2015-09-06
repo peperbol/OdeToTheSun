@@ -42,6 +42,5 @@ public class BackgroundColorPulsar : Pulsar
             target.backgroundColor = initial;
         }
 
-        yield return null;
     }
 }
