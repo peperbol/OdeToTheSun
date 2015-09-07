@@ -61,6 +61,14 @@ public class GameProgress : MonoBehaviour {
         sg = GameObject.FindObjectOfType<SunGrowth>();
         Progress = startProgress;
 	}
+
+	public void Update() {
+		if (Input.GetKeyDown(KeyCode.LeftShift)) {
+			Progress = 1;
+		}
+
+	}
+
     public static void HitBeat()
     {
         Progress += beatHitProgress;

@@ -21,7 +21,7 @@ public class StartGame : MonoBehaviour {
             start &= Input.GetKey(c[i].GetKey());
         }
         
-        if (start || debugSkip) {
+        if (start || debugSkip || Input.GetKeyDown(KeyCode.Space)) {
             GameObject.FindObjectOfType<SongPlayer>().Play();
             Destroy(StartVisual);
             Destroy(this);

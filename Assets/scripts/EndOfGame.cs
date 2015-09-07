@@ -24,7 +24,7 @@ public class EndOfGame : MonoBehaviour
 
     private IEnumerator ZoomOut()
     {
-        bool finish = GameProgress.Progress == 1;
+        bool finish = GameProgress.Progress > 0.75f;
         float p = GameProgress.Progress;
         float startSize = Camera.main.orthographicSize;
         Vector3 startPos = Camera.main.transform.position;

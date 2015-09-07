@@ -6,7 +6,7 @@ public  class GameProperties :MonoBehaviour
     public const int NUMBER_OF_PLAYERS = 4;
     public const int NUMBER_OF_COLORS = NUMBER_OF_PLAYERS * 2;
     public const float ANGLE_OFFSET_BETWEEN_HANDS = 15 * Mathf.PI / 180f;
-    public const float BEAT_SUCCEED_RATIO = 0.8F;
+    public const float BEAT_SUCCEED_RATIO = 0.6f;
 
     private static float spawnRadius ;
 	public static float SpawnRadius {get{return spawnRadius;}}
