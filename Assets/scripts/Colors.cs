@@ -2,7 +2,7 @@
 using System.Collections;
 
 public enum Colors  {
-	DARKBLUE = 0, GREEN = 1, RED = 2, PURPLE = 3, ORANGE = 4, YELLOW = 5, BLACK = 6, CYAN = 7
+	LIGHTRED = 0, DARKRED = 1, LIGHTPINK = 2, DARKPINK = 3, LIGHTBLUE = 4, DARKBLUE = 5, LIGHTGREEN = 6, DARKGREEN = 7
 }
 
 public static class ColorExtantions{
@@ -10,21 +10,21 @@ public static class ColorExtantions{
 	public static KeyCode GetKey(this Colors c)
 	{
 		switch (c) {
-		case Colors.DARKBLUE:
+		case Colors.LIGHTRED:
 			return KeyCode.Q;
-		case Colors.GREEN:
+		case Colors.DARKRED:
 			return KeyCode.W;
-		case Colors.RED:
+		case Colors.LIGHTPINK:
 			return KeyCode.E;
-		case Colors.PURPLE:
+		case Colors.DARKPINK:
 			return KeyCode.R;
-		case Colors.ORANGE:
+		case Colors.LIGHTBLUE:
 			return KeyCode.T;
-		case Colors.YELLOW:
+		case Colors.DARKBLUE:
 			return KeyCode.Y;
-		case Colors.BLACK:
+		case Colors.LIGHTGREEN:
 			return KeyCode.U;
-		case Colors.CYAN:
+		case Colors.DARKGREEN:
 			return KeyCode.I;
 		default:
 			return KeyCode.Q;
@@ -34,22 +34,22 @@ public static class ColorExtantions{
     {
         switch (c)
         {
+            case Colors.LIGHTRED:
+                return GameObject.FindObjectOfType<ColorSprites>().LightRed;
+            case Colors.DARKRED:
+                return GameObject.FindObjectOfType<ColorSprites>().DarkRed;
+            case Colors.LIGHTPINK:
+                return GameObject.FindObjectOfType<ColorSprites>().LightPink;
+            case Colors.DARKPINK:
+                return GameObject.FindObjectOfType<ColorSprites>().DarkPink;
+            case Colors.LIGHTBLUE:
+                return GameObject.FindObjectOfType<ColorSprites>().LightBlue;
             case Colors.DARKBLUE:
-                return GameObject.FindObjectOfType<ColorSprites>().BlueDark;
-            case Colors.GREEN:
-                return GameObject.FindObjectOfType<ColorSprites>().Green;
-            case Colors.RED:
-                return GameObject.FindObjectOfType<ColorSprites>().Red;
-            case Colors.PURPLE:
-                return GameObject.FindObjectOfType<ColorSprites>().Pink;
-            case Colors.ORANGE:
-                return GameObject.FindObjectOfType<ColorSprites>().White;
-            case Colors.YELLOW:
-                return GameObject.FindObjectOfType<ColorSprites>().Grey;
-            case Colors.BLACK:
-                return GameObject.FindObjectOfType<ColorSprites>().Black;
-            case Colors.CYAN:
-                return GameObject.FindObjectOfType<ColorSprites>().BlueLight;
+                return GameObject.FindObjectOfType<ColorSprites>().DarkBlue;
+            case Colors.LIGHTGREEN:
+                return GameObject.FindObjectOfType<ColorSprites>().LightGreen;
+            case Colors.DARKGREEN:
+                return GameObject.FindObjectOfType<ColorSprites>().DarkGreen;
             default:
                 return null;
         }
