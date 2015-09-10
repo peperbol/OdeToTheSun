@@ -18,7 +18,8 @@ OdeToTheSun_Data/
 /*.pidb
 /*.booproj
 .vs/
-Assets/UnityVS/
+/Assets/UnityVS
+projectSettings/ProjectVersion.txt
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
 
