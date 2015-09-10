@@ -21,10 +21,10 @@ public class InputController : MonoBehaviour {
             if (Input.GetKeyDown(keys[i])) {
                 if (notesInside.Exists(e => e.ColorOfNote.GetKey() == keys[i])) {
                     notesInside.FindAll(e => e.ColorOfNote.GetKey() == keys[i]).ForEach(e => e.Activate());
-                    Debug.Log(keys[i] + "hit succesfull");
+                    //Debug.Log(keys[i] + "hit succesfull");
                 } else
                 {
-                    Debug.Log(keys[i] + "hit failed");
+                    //Debug.Log(keys[i] + "hit failed");
                     //todo: you pressed wrong
                 }
             }
