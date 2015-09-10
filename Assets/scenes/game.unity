@@ -399,6 +399,7 @@ MonoBehaviour:
   beatSound: {fileID: 8300000, guid: 92fb489753ebc3340a0736dfb07cfa6f, type: 3}
   backgroundMusicAudioSource: {fileID: 378238733}
   effectsAudioSource: {fileID: 378238726}
+  songName: sequence.txt
 --- !u!82 &378238726
 AudioSource:
   m_ObjectHideFlags: 0

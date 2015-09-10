@@ -54,4 +54,28 @@ public static class ColorExtantions{
                 return null;
         }
     }
+  public static Color GetColor(this Colors c)
+  {
+    switch (c)
+    {
+      case Colors.LIGHTRED:
+        return new Color(1f,0f,0f);
+      case Colors.DARKRED:
+        return new Color(0.6f, 0f, 0f);
+      case Colors.LIGHTPINK:
+        return new Color(1f, 0f, 0.9f);
+      case Colors.DARKPINK:
+        return new Color(0.45f, 0f, 0.75f);
+      case Colors.LIGHTBLUE:
+        return new Color(0.2f, 0.7f, 0.9f);
+      case Colors.DARKBLUE:
+        return new Color(0f, 0.2f, 0.7f);
+      case Colors.LIGHTGREEN:
+        return new Color(0.2f, 1f, 0.1f);
+      case Colors.DARKGREEN:
+        return new Color(0.1f, 0.3f, 0f);
+      default:
+        return new Color(0f, 0f, 0f);
+    }
+  }
 }

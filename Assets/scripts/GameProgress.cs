@@ -46,16 +46,6 @@ public class GameProgress : MonoBehaviour {
     }
     private static SunGrowth sg;
 
-    private static BeatSequence sequence;
-    public static BeatSequence Sequence {
-        get {
-            if (sequence == null) {
-                sequence = new BeatSequence(BeatSequence.Path);
-            }
-            return sequence;
-        }
-        set { sequence = value; }
-    }
 
     void Start () {
         sg = GameObject.FindObjectOfType<SunGrowth>();

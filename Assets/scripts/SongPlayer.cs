@@ -20,9 +20,9 @@ public class SongPlayer : MonoBehaviour {
 	public AudioClip beatSound;
 	public AudioSource backgroundMusicAudioSource;
 	public AudioSource effectsAudioSource;
+  public string songName;
     private NoteSpawner ns;
     private Juicificationator juice;
-	// Use this for initialization
 
     public ClapWaveSequence WaveSequence
     {
@@ -37,7 +37,7 @@ public class SongPlayer : MonoBehaviour {
 		timeTillNextBeat = timePerBeat;
 		timeTillNextMeasure = timePerBeat * 4;		// 4/4 time signature, 4 beats per measure	timePerBeat = 60 / bpm;
 
-		LoadSequenceFile("sequence.txt");
+		waveSequence = ClapWaveSequence.LoadSequenceFile(songName,timePerBeat);
 	}
 
 	public void ApplyTimestampOffset(float offset) {
@@ -82,35 +82,5 @@ public class SongPlayer : MonoBehaviour {
 			//TODO visualizer.SpawnMeasure();
 		}
 	}
-
-	public void LoadSequenceFile(string fileName) {
-		string filePath = System.IO.Path.Combine(Application.streamingAssetsPath, fileName);
-        Debug.Log ("filePath " + filePath);
-        StreamReader reader = new StreamReader(filePath, Encoding.Default);
-        string line = reader.ReadLine();
-	
-
-        do
-        {
-            bool[] claps = new bool[8];
-            if (line[0] == '#')
-            {
-                line = reader.ReadLine();
-                continue;
-            }
-
-			for (int i = 0; i < 8; i++)
-				claps[i] = line[i] != BeatSequence.NONE;
-			bool hold = line.Length > 8 && line[8] == BeatSequence.HOLD;
-			bool release = line.Length > 8 && line[8] == BeatSequence.RELEASE ;
-			ClapWave wave = new ClapWave(claps, hold, release);
-			waveSequence.Add(wave);
-
-            /*Debug.Log(line);
-			Debug.Log(wave.ToString());*/
-            line = reader.ReadLine();
-        } while (line != null);        
-
-		waveSequence.GenerateTimeStamps(timePerBeat);
-	}
+  
 }
