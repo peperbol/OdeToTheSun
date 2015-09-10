@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
-
 public class Note : MonoBehaviour
 {
 
-  public float fadeoutSpeed = 0.1f;
+  public float fadeoutTime = 0.1f;
   private bool arriving = false;
   private Colors color;
   public AudioClip miss;
@@ -30,9 +29,9 @@ public class Note : MonoBehaviour
     if (arriving)
     {
       Color color = spriteRenderer.color;
-      color.a -= fadeoutSpeed;
+      color.a -= Time.deltaTime /fadeoutTime;
       spriteRenderer.color = color;
-      Destroy(GetComponent<Renderer>());
+
     }
   }
   public void Activate()
@@ -60,8 +59,10 @@ public class Note : MonoBehaviour
   }
   public void Arrive()
   {
-    //Debug.Log("arrived");
+    Debug.Log("arrived");
     arriving = true;
+    SizeFade f = GetComponent<SizeFade>() ;
+    if (f != null) f.isFirstSize = true;
   }
 
 

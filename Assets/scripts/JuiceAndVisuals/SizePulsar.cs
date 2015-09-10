@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 [RequireComponent(typeof(Transform))]
-public class SizePulsar : Pulsar {
+public class SizePulsar : Pulsar
+{
     [Range(0, 4)]
     public float maxSizePulse = 1.25f;
-
+    [NonSerialized]
+    public Vector3 initialScale;
+    void Start()
+    {
+        initialScale = transform.localScale;
+    }
     override public void startPulse()
     {
         Transform t = GetComponent<Transform>();
@@ -15,7 +22,7 @@ public class SizePulsar : Pulsar {
     private IEnumerator pulseSize(Transform target, float widenTime, float maxSize, float shrinkTime)
     {
         float currTime = 0;
-        Vector3 initialScale = target.localScale;
+         initialScale = target.localScale;
 
         while (currTime < widenTime && target != null)
         {
