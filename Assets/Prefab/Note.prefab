@@ -90,7 +90,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: .200000003
+  m_Radius: .0500000007
 --- !u!114 &11400684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3548c1d18b319479c7c8ecf4d75e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size1: {x: 0, y: 0, z: 0}
+  Size1: {x: 2.4000001, y: 2.4000001, z: 2.4000001}
   Size2: {x: 1, y: 1, z: 1}
   isFirstSize: 0
-  timeToResize: .200000003
+  timeToResize: .300000012
 --- !u!114 &11458426
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0bdced6aea51242bc5f22e776d6702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeoutTime: .150000006
+  fadeoutTime: .300000012
   miss: {fileID: 8300000, guid: 5a1ebf440aaf8ac4fb71b93fc52e4097, type: 3}
   hit: {fileID: 8300000, guid: f5fb935c347bfb5409ff945dfd01e5f0, type: 3}
   src: {fileID: 11444002, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
@@ -237,11 +237,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: fadeoutTime
-      value: .150000006
+      value: .300000012
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: timeToResize
-      value: .200000003
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Size1.x
+      value: 2.4000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Size1.y
+      value: 2.4000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: Size1.z
+      value: 2.4000001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
