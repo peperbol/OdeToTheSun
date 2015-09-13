@@ -37,12 +37,8 @@ public class InputController : MonoBehaviour {
             notesInside.Add(col.gameObject.GetComponent<Note>());
         }
     }
-    void OnTriggerExit2D(Collider2D col)
+    public void Remove(Note note)
     {
-        if (col.gameObject.GetComponent<Note>())
-        {
-            notesInside.Remove(col.gameObject.GetComponent<Note>());
-            col.gameObject.GetComponent<Note>().Validate();
-        }
+            notesInside.Remove(note);
     }
 }

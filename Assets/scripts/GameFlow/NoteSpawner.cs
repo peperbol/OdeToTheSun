@@ -37,6 +37,7 @@ public class NoteSpawner : MonoBehaviour {
         Note o = Instantiate<Note>(NotePrefab);
         o.transform.position = spawnpoints[(int)color];
         o.ColorOfNote = color;
+        o.GetComponent<MoveTowards>().turnToLeft = ((int)color % 2 == 0);
     }
 
 

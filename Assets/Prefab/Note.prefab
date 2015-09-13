@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {x: 0, y: 0, z: 0}
+  turnToLeft: 1
 --- !u!114 &11470076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0bdced6aea51242bc5f22e776d6702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeoutTime: .300000012
+  arriveTime: .300000012
   miss: {fileID: 8300000, guid: 5a1ebf440aaf8ac4fb71b93fc52e4097, type: 3}
   hit: {fileID: 8300000, guid: f5fb935c347bfb5409ff945dfd01e5f0, type: 3}
   src: {fileID: 11444002, guid: df6fbeeaea6b07246821a7738a55d379, type: 2}
@@ -254,6 +255,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: Size1.z
       value: 2.4000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: arriveTime
+      value: .300000012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

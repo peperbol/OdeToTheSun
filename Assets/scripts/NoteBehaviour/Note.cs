@@ -3,7 +3,7 @@ using System.Collections;
 public class Note : MonoBehaviour
 {
 
-  public float fadeoutTime = 0.1f;
+  public float arriveTime = 0.1f;
   private bool arriving = false;
   private Colors color;
   public AudioClip miss;
@@ -29,7 +29,7 @@ public class Note : MonoBehaviour
     if (arriving)
     {
       Color color = spriteRenderer.color;
-      color.a -= Time.deltaTime /fadeoutTime;
+      color.a -= Time.deltaTime /arriveTime;
       spriteRenderer.color = color;
 
     }
@@ -39,8 +39,10 @@ public class Note : MonoBehaviour
     activated = true;
   }
 
-  public void Validate()
+  public IEnumerator Validate()
   {
+    yield return new WaitForSeconds(arriveTime *1.5f);
+    GameObject.FindObjectOfType<InputController>().Remove(this);
     // Debug.Log("val");
     if (activated)
     {
@@ -63,6 +65,7 @@ public class Note : MonoBehaviour
     arriving = true;
     SizeFade f = GetComponent<SizeFade>() ;
     if (f != null) f.isFirstSize = true;
+        StartCoroutine(Validate());
   }
 
 
