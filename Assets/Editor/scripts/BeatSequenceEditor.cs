@@ -64,7 +64,7 @@ public class BeatSequenceEditor : EditorWindow
     if (GUI.Button(new Rect(width, 0, 50, 20), "Save"))
     {
 
-      //b.Write(BeatSequence.Path);
+            ClapWaveSequence.SaveSequenceFile(path,Sequence);
     }
     width += 55;
     length = EditorGUI.IntField(new Rect(width, 0, 100, 20), length);

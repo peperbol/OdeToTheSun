@@ -55,13 +55,14 @@ public class ClapWaveSequence
     waveSequence.GenerateTimeStamps(timePerBeat);
     return waveSequence;
   }
-  public static void SaveSequenceFile(string fileName, float timePerBeat, ClapWaveSequence seq)
+  public static void SaveSequenceFile(string fileName, ClapWaveSequence seq)
   {
     if (File.Exists(Application.streamingAssetsPath + fileName))
     {
       File.Delete(Application.streamingAssetsPath + fileName);
-    }
-    StreamWriter sr = File.CreateText(Application.streamingAssetsPath + fileName);
+        }
+        string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
+        StreamWriter sr = File.CreateText(filePath);
 
     for (int x = 0; x < seq.Count(); x++)
     {
