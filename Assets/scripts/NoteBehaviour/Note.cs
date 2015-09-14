@@ -5,12 +5,12 @@ public class Note : MonoBehaviour
 
   public float arriveTime = 0.1f;
   private bool arriving = false;
-  private Colors color;
+  private SolarColor color;
   public AudioClip miss;
   public AudioClip hit;
   public AudioPlay src;
   private SpriteRenderer spriteRenderer;
-  public Colors ColorOfNote
+  public SolarColor ColorOfNote
   {
     get { return color; }
     set { color = value; }

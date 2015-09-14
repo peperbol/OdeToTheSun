@@ -86,7 +86,7 @@ public class EndOfGame : MonoBehaviour
   {
     if (restartable)
     {
-      Colors[] c = (Colors[])Enum.GetValues(typeof(Colors));
+      SolarColor[] c = (SolarColor[])Enum.GetValues(typeof(SolarColor));
       bool press = false;
       for (int i = 0; i < c.Length; i++)
       {

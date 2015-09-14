@@ -101,7 +101,7 @@ public class BeatSequenceEditor : EditorWindow
       for (int y = 0; y < wave.Notes.Length; y++)
       {
         
-        EditorGUI.DrawRect(new Rect(width- 5, height - 5, checkboxWidth, checkboxHeight), (wave.Notes[y])?((Colors)y).GetColor(): ((Colors)y).GetColor() * 0.8f);
+        EditorGUI.DrawRect(new Rect(width- 5, height - 5, checkboxWidth, checkboxHeight), (wave.Notes[y])?((SolarColor)y).GetColor(): ((SolarColor)y).GetColor() * 0.8f);
         
         wave.Notes[ y] = EditorGUI.Toggle(new Rect(width, height, checkboxWidth, checkboxHeight), wave.Notes[y]);
         width += checkboxWidth;

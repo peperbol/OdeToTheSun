@@ -3,13 +3,13 @@ using System.Collections;
 using System;
 
 public class StartGame : MonoBehaviour {
-    Colors[] c;
+    SolarColor[] c;
     public bool debugSkip;
     public GameObject StartVisual;
     // Use this for initialization
     void Start () {
 
-        c = (Colors[])Enum.GetValues(typeof(Colors));
+        c = (SolarColor[])Enum.GetValues(typeof(SolarColor));
     }
 	
 	// Update is called once per frame

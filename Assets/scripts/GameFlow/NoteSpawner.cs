@@ -33,7 +33,7 @@ public class NoteSpawner : MonoBehaviour {
         return result;
     }
 
-    void spawnNote(Colors color) {
+    void spawnNote(SolarColor color) {
         Note o = Instantiate<Note>(NotePrefab);
         o.transform.position = spawnpoints[(int)color];
         o.ColorOfNote = color;
@@ -51,7 +51,7 @@ public class NoteSpawner : MonoBehaviour {
         for (int i = 0; i < wave.Notes.Length; i++)
         {
             if (wave.Notes[i]) {
-                spawnNote((Colors)i);
+                spawnNote((SolarColor)i);
             }
         }
         spawnRing();

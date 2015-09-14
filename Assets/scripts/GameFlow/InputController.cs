@@ -11,7 +11,7 @@ public class InputController : MonoBehaviour {
        
         for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++)
         {
-            keys[i] = ((Colors)i).GetKey();
+            keys[i] = ((SolarColor)i).GetKey();
         }
 	}
 	
