@@ -29,19 +29,19 @@ public class ClapWaveSequence
     string line = reader.ReadLine();
 
 
-    do
-    {
-      bool[] claps = new bool[8];
+        do
+        {
+            bool[] claps = new bool[GameProperties.NUMBER_OF_COLORS];
       if (line[0] == BARIER[0])
       {
         line = reader.ReadLine();
         continue;
       }
 
-      for (int i = 0; i < 8; i++)
+      for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++)
         claps[i] = line[i] != NONE;
-      bool hold = line.Length > 8 && line[8] == HOLD;
-      bool release = line.Length > 8 && line[8] == RELEASE;
+      bool hold = line.Length > GameProperties.NUMBER_OF_COLORS && line[GameProperties.NUMBER_OF_COLORS] == HOLD;
+      bool release = line.Length > GameProperties.NUMBER_OF_COLORS && line[GameProperties.NUMBER_OF_COLORS] == RELEASE;
       ClapWave wave = new ClapWave(claps, hold, release);
       waveSequence.Add(wave);
 
@@ -72,7 +72,7 @@ public class ClapWaveSequence
       }
       string line = "";
       ClapWave wave = seq.GetWave(x);
-      for (int i = 0; i < 8; i++)
+      for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++)
       {
         line += (wave.Notes[i]) ? "X" : NONE.ToString();
       }
@@ -112,7 +112,7 @@ public class ClapWaveSequence
       }
       else
       {
-        Add(new ClapWave(new bool[8], false, false));
+        Add(new ClapWave(new bool[GameProperties.NUMBER_OF_COLORS], false, false));
       }
       diff = length - Count();
     }
