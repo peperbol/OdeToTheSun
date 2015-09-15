@@ -5,22 +5,42 @@ using System.Collections.Generic;
 
 public class InputController : MonoBehaviour {
     private List<Note> notesInside = new List<Note>();
-	private KeyCode[] keys = new KeyCode[GameProperties.NUMBER_OF_COLORS];
-	// Use this for initialization
-	void Start () {
-       
-        for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++)
-        {
-            keys[i] = ((SolarColor)i).GetKey();
+   
+
+    private static bool[] inputPressed = new bool[GameProperties.NUMBER_OF_COLORS];
+    private static bool[] inputDown = new bool[GameProperties.NUMBER_OF_COLORS];
+    private static bool[] inputUp = new bool[GameProperties.NUMBER_OF_COLORS];
+
+    public static void SetPress(SolarColor color, bool value)
+    {
+
+        if (inputPressed[(int)color] != value) {
+            inputPressed[(int)color] = value;
+            if (value)
+            {
+                inputDown[(int)color] = true;
+
+            }
+            else
+            {
+                inputUp[(int)color] = true;
+            }
         }
-	}
+    }
+    private static void ResetFrame() {
+        inputDown = new bool[GameProperties.NUMBER_OF_COLORS];
+        inputUp = new bool[GameProperties.NUMBER_OF_COLORS];
+    }
 	
 	void Update () {
         for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++)
         {
-            if (Input.GetKeyDown(keys[i])) {
-                if (notesInside.Exists(e => e.ColorOfNote.GetKey() == keys[i])) {
-                    notesInside.FindAll(e => e.ColorOfNote.GetKey() == keys[i]).ForEach(e => e.Activate());
+            if (inputDown[i]) {
+                if (notesInside.Exists(e => e.ColorOfNote == (SolarColor) i )) {
+
+                    notesInside
+                        .FindAll(e => e.ColorOfNote == (SolarColor)i)
+                        .ForEach(e => e.Activate());
                     //Debug.Log(keys[i] + "hit succesfull");
                 } else
                 {
@@ -29,6 +49,7 @@ public class InputController : MonoBehaviour {
                 }
             }
         }
+        ResetFrame();
 	}
 
     void OnTriggerEnter2D(Collider2D col)
@@ -37,6 +58,7 @@ public class InputController : MonoBehaviour {
             notesInside.Add(col.gameObject.GetComponent<Note>());
         }
     }
+
     public void Remove(Note note)
     {
             notesInside.Remove(note);
