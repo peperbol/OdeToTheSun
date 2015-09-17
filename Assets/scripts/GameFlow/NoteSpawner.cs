@@ -10,10 +10,10 @@ public class NoteSpawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        spawnpoints = calculateSpawnPoints();
+        spawnpoints = CalculateSpawnPoints();
     }
 
-    Vector3[] calculateSpawnPoints()
+    private Vector3[] CalculateSpawnPoints()
     {
         Vector3[] result = new Vector3[GameProperties.NUMBER_OF_COLORS];
         for (int i = 0; i < GameProperties.NUMBER_OF_PLAYERS; i++)
@@ -81,11 +81,6 @@ public class NoteSpawner : MonoBehaviour {
     {
         return player * 2 + (int)hand;
     }
-
-    // Update is called once per frame
-    void Update () {
-        
-	}
 
     public enum Hand
     {
