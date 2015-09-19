@@ -89,7 +89,6 @@ public class Sphere : MonoBehaviour {
 					thisTransform.position = newWorldPoint;							
 				}
 				
-				float percentDistance = distance2D / radius;
 				
 				// If we let go of the button or we are out of bounds, release the ball
 				if (Input.GetMouseButtonUp(0)) {
