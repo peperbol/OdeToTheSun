@@ -56,7 +56,7 @@ public class InputController : MonoBehaviour {
                 }
             }
         }
-        Debug.Log(inputDown[0]+" "+ inputDown[1] + " " + inputDown[2] + " " + inputDown[3] + " " + inputDown[4] + " " + inputDown[5] + " " + inputDown[6] + " " + inputDown[7] + " ");
+        //Debug.Log(inputDown[0]+" "+ inputDown[1] + " " + inputDown[2] + " " + inputDown[3] + " " + inputDown[4] + " " + inputDown[5] + " " + inputDown[6] + " " + inputDown[7] + " ");
         ResetFrame();
 	}
 
