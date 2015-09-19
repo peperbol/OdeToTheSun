@@ -10,7 +10,6 @@ public class InputController : MonoBehaviour {
     private static bool[] inputPressed = new bool[GameProperties.NUMBER_OF_COLORS];
     private static bool[] inputDown = new bool[GameProperties.NUMBER_OF_COLORS];
     private static bool[] inputUp = new bool[GameProperties.NUMBER_OF_COLORS];
-
     public static void SetPress(SolarColor color, bool value)
     {
 

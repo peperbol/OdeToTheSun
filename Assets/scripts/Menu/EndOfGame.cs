@@ -92,11 +92,15 @@ public class EndOfGame : MonoBehaviour
     {
         if (restartable)
         {
-            SolarColor[] c = (SolarColor[])Enum.GetValues(typeof(SolarColor));
             bool press = false;
-            for (int i = 0; i < c.Length; i++)
+            for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++)
             {
-                press |= Input.GetKey(c[i].GetKey());
+                press |= InputController.GetPress((SolarColor)i);
+
+            }
+            if (GameProperties.Platform == GameProperties.InputPlatform.MOBILE)
+            {
+                press |= Input.GetMouseButtonDown(0);
             }
             if (press)
             {
