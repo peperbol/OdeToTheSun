@@ -354,8 +354,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 357193086}
   - 114: {fileID: 357193085}
+  - 114: {fileID: 357193087}
   m_Layer: 0
-  m_Name: MobileInput
+  m_Name: Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -386,6 +387,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &357193087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 357193084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ec4935f48f9ad45bfad3b7e4db8396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &378238723
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +409,6 @@ GameObject:
   - 58: {fileID: 378238724}
   - 114: {fileID: 378238728}
   - 114: {fileID: 378238729}
-  - 114: {fileID: 378238730}
   - 114: {fileID: 378238732}
   - 82: {fileID: 378238733}
   - 82: {fileID: 378238726}
@@ -405,7 +416,7 @@ GameObject:
   - 114: {fileID: 378238734}
   - 114: {fileID: 378238731}
   - 114: {fileID: 378238735}
-  - 114: {fileID: 378238736}
+  - 114: {fileID: 378238730}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -684,17 +695,6 @@ MonoBehaviour:
   DarkBlue: {fileID: 21300000, guid: fd38890700e38f843ba876b0764b6761, type: 3}
   LightGreen: {fileID: 21300000, guid: 00445cb43ac8a3c44bd4dcf4d28b4d14, type: 3}
   DarkGreen: {fileID: 21300000, guid: 1c1591c4a07b66645ae96c369b9039ed, type: 3}
---- !u!114 &378238736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 378238723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8ec4935f48f9ad45bfad3b7e4db8396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &443403972
 GameObject:
   m_ObjectHideFlags: 0
