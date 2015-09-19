@@ -583,6 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugSkip: 0
+  debugTest: 1
   StartVisual: {fileID: 1260937525}
 --- !u!114 &378238732
 MonoBehaviour:
