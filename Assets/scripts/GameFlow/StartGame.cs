@@ -18,7 +18,7 @@ public class StartGame : MonoBehaviour {
 		
         for (int i = 0; i < c.Length; i++)
         {
-            start &= Input.GetKey(c[i].GetKey());
+            start &= InputController.GetPress((SolarColor )i);
         }
         
         if (start || debugSkip || Input.GetKeyDown(KeyCode.Space)) {
