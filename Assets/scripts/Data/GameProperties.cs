@@ -23,10 +23,15 @@ public  class GameProperties :MonoBehaviour
     private static float noteRotation = 20f;
     public static float NoteRotation { get { return noteRotation; } }
     public static float BeatsUntilCenter { get { return beatsUntilCenter; } }
+    private static InputPlatform platform = InputPlatform.MOBILE;
 
-
+    public static InputPlatform Platform {
+        get { return platform; }
+        set { platform = value; }
+    }
 
     void Awake(){
         spawnRadius = Camera.main.orthographicSize * 0.8f;
     }
+    public enum InputPlatform { MOBILE, ARDUINO, KEYBOARD }
 }
