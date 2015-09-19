@@ -14,11 +14,27 @@ public class ClapWaveSequence
 
     public static ClapWaveSequence LoadSequenceFile(string fileName, float timePerBeat)
     {
+
         ClapWaveSequence waveSequence = new ClapWaveSequence();
         StreamReader reader = null;
         try
         {
             string filePath = Path.Combine(Application.streamingAssetsPath, fileName);
+            if (filePath.Contains("://"))
+            { //android mobile
+                string newPath = Path.Combine(Application.persistentDataPath, fileName);
+                if (!File.Exists(newPath))
+                {
+                    WWW www = new WWW(filePath);
+                    while (!www.isDone) {; }                // Wait for download to complete - not pretty at all but easy hack for now 
+                    if (System.String.IsNullOrEmpty(www.error))
+                    {
+                        File.WriteAllBytes(newPath, www.bytes);
+                    }
+
+                }
+                filePath = newPath;
+            }
             reader = new StreamReader(filePath, System.Text.Encoding.Default);
         }
         catch (System.Exception e)
