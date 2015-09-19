@@ -14,7 +14,8 @@ public class InputController : MonoBehaviour {
     public static void SetPress(SolarColor color, bool value)
     {
 
-        if (inputPressed[(int)color] != value) {
+        if ((inputPressed[(int)color] ^ value)) {
+            Debug.Log(5);
             inputPressed[(int)color] = value;
             if (value)
             {
@@ -27,9 +28,15 @@ public class InputController : MonoBehaviour {
             }
         }
     }
+    public static bool GetPress(SolarColor color) {
+        return inputPressed[(int)color];
+    }
     private static void ResetFrame() {
-        inputDown = new bool[GameProperties.NUMBER_OF_COLORS];
-        inputUp = new bool[GameProperties.NUMBER_OF_COLORS];
+        for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++)
+        {
+            inputDown[i]  = false;
+            inputUp[i] = false;
+        }
     }
 	
 	void Update () {
@@ -49,6 +56,7 @@ public class InputController : MonoBehaviour {
                 }
             }
         }
+        Debug.Log(inputDown[0]+" "+ inputDown[1] + " " + inputDown[2] + " " + inputDown[3] + " " + inputDown[4] + " " + inputDown[5] + " " + inputDown[6] + " " + inputDown[7] + " ");
         ResetFrame();
 	}
 
