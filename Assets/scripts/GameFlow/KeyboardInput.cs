@@ -3,8 +3,15 @@ using System.Collections;
 
 public class KeyboardInput : MonoBehaviour
 {
-
-    void Update()
+    void Start()
+    {
+        if (GameProperties.Platform != GameProperties.InputPlatform.KEYBOARD)
+        {
+            enabled = false;
+            return;
+        }
+    }
+        void Update()
     {
 
         for (int i = 0; i < GameProperties.NUMBER_OF_COLORS; i++)

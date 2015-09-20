@@ -10,6 +10,10 @@ public class MobileInput : MonoBehaviour
 
     void Start()
     {
+        if (GameProperties.Platform != GameProperties.InputPlatform.MOBILE) {
+            enabled = false;
+            return;
+        }
         Vector3[] poss = CalculateInputPosition(4);
         buttons = new Collider2D[poss.Length];
         for (int i = 0; i < poss.Length; i++)
