@@ -9,25 +9,32 @@ public class ProceduralRing : MonoBehaviour {
     private int[] triangleIndices;
     public float centerDistance = 1f;
     public float shrinkingSpeed = 0.1f;
-
+    private MeshFilter mf;
     // Use this for initialization
     void Start () {
-        triangleIndices = calculateRingTriangle();        
+        triangleIndices = calculateRingTriangle();
+        mf = GetComponent<MeshFilter>();
+        Mesh mesh = mf.mesh;
+        mesh.name = "Procedural Ring";
+        mesh.vertices = calculateRingPoints();
+        mesh.triangles = triangleIndices;
+        mesh.Optimize();
+        mesh.RecalculateNormals();
     }
 	
 	// Update is called once per frame
 	void Update () {
         centerDistance -= shrinkingSpeed * Time.deltaTime;
+        
         if(centerDistance <= 0.0f)
         {
             Destroy(gameObject);
         } else
         {
-            Mesh mesh = new Mesh();
-            GetComponent<MeshFilter>().mesh = mesh;
-            mesh.name = "Procedural Ring";
+            Mesh mesh = mf.mesh;
             mesh.vertices = calculateRingPoints();
-            mesh.triangles = triangleIndices;
+            mesh.Optimize();
+            mesh.RecalculateNormals();
         }
     }
 
