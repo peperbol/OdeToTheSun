@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class MoveTowards : MonoBehaviour {
 
 	public Vector3 target;
     public bool turnToLeft = true;
-    private Rigidbody2D rigidbody2d;
 	void Start(){
-        rigidbody2d = GetComponent<Rigidbody2D>();
     }
 	
 	// Update is called once per frame

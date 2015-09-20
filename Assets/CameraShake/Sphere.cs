@@ -13,7 +13,7 @@ public class Sphere : MonoBehaviour {
 	bool isBeingThrown = false;
 	bool isHeld = false;
 	bool shouldLerpToOrigin = false;
-	bool shouldPlayToneASAP = false;
+	//bool shouldPlayToneASAP = false;
 	
 	float radius = 1.0f;
 	

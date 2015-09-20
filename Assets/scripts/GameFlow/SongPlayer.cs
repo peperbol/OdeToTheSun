@@ -63,7 +63,7 @@ public class SongPlayer : MonoBehaviour {
 			//Debug.Log(timeTillNetBeat);
 			timeTillNextBeat = timePerBeat + timeTillNextBeat;
             ClapWave wave = waveSequence.GetWave(currentBeatId);
-            string waveStr = wave.ToString();
+            
             //effectsAudioSource.PlayOneShot(beatSound);
             ns.SpawnWave(wave);
 			currentBeatId++;

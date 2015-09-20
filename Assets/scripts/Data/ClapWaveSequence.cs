@@ -207,6 +207,11 @@ public class ClapWave
         this.id = id;
     }
 
+    public int GetId()
+    {
+        return this.id;
+    }
+
     public void SetTimeStamp(float timeStamp)
     {
         this.timeStamp = timeStamp;

@@ -44,11 +44,11 @@ public class GameProgress : MonoBehaviour {
             }
         }
     }
-    private static SunGrowth sg;
+    //private static SunGrowth sg;
 
 
     void Start () {
-        sg = GameObject.FindObjectOfType<SunGrowth>();
+        //sg = GameObject.FindObjectOfType<SunGrowth>();
         Progress = startProgress;
 	}
 
