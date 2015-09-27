@@ -33,6 +33,7 @@ public class StartGame : MonoBehaviour {
         }
         if (start || debugSkip || (debugTest && Input.GetKeyDown(KeyCode.Space))) {
             GameObject.FindObjectOfType<SongPlayer>().Play();
+            GameProperties.Playing = true;
             Destroy(StartVisual);
             Destroy(this);
         }

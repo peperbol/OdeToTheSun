@@ -52,6 +52,9 @@ public class EndOfGame : MonoBehaviour
             }
             yield return null;
         }
+
+        GameProperties.Playing = false;
+
         time = 0;
         while (time < zoomTime)
         {
