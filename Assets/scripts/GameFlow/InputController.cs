@@ -14,7 +14,6 @@ public class InputController : MonoBehaviour {
     {
 
         if ((inputPressed[(int)color] ^ value)) {
-            Debug.Log(5);
             inputPressed[(int)color] = value;
             if (value)
             {
@@ -50,8 +49,8 @@ public class InputController : MonoBehaviour {
                     //Debug.Log(keys[i] + "hit succesfull");
                 } else
                 {
+                    GameProgress.InvalidHit();
                     //Debug.Log(keys[i] + "hit failed");
-                    //todo: you pressed wrong
                 }
             }
         }

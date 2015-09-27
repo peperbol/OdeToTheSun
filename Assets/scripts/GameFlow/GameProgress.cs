@@ -22,12 +22,16 @@ public class GameProgress : MonoBehaviour {
 
         }// to be edited
     }
-    public static float beatHitProgress {
+    public static float BeatHitProgress {
         get { return 1/(totalbeats * GameProperties.BEAT_SUCCEED_RATIO); }
     }
-    public static float beatMissProgress
+    public static float BeatMissProgress
     {
-        get { return -beatHitProgress/2; }
+        get { return - BeatHitProgress/2; } // todo, hardcoded
+    }
+    public static float InvalidHitProgress
+    {
+        get { return -BeatHitProgress / 3; } // todo, hardcoded
     }
 
     [Range(0, 1)]
@@ -61,10 +65,14 @@ public class GameProgress : MonoBehaviour {
 
     public static void HitBeat()
     {
-        Progress += beatHitProgress;
+        Progress += BeatHitProgress;
     }
     public static void MissBeat()
     {
-        Progress += beatMissProgress;
+        Progress += BeatMissProgress;
+    }
+    public static void InvalidHit()
+    {
+        progress += InvalidHitProgress;
     }
 }
