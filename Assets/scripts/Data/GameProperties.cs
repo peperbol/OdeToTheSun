@@ -7,7 +7,7 @@ public  class GameProperties :MonoBehaviour
     public const int NUMBER_OF_COLORS = NUMBER_OF_PLAYERS * 2;
     public const float ANGLE_OFFSET_BETWEEN_HANDS = 15 * Mathf.PI / 180f;
 
-    private static float beatSucceedRatio = 1f;
+    private static float beatSucceedRatio = 0.65f;
     public static float BeatSucceedRatio { get { return beatSucceedRatio; } }
 
     private static float beatComboGrowth = 1.05f;
